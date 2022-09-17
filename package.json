@@ -13,9 +13,9 @@
 	"dependencies": {
 		"@types/node": "^18.7.18",
 		"element-plus": "^2.2.17",
+		"pinia": "^2.0.22",
 		"vue": "^3.2.37",
-		"vue-router": "^4.1.5",
-		"vuex": "^4.0.2"
+		"vue-router": "^4.1.5"
 	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^5.37.0",
