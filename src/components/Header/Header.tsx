@@ -2,12 +2,12 @@ import { defineComponent } from "vue";
 import './Header.scss'
 
 import Navigation from "../Navigation/Navigation"
-
 import Search from "../Search/Search"
+import Notification from "./Notification/Notification";
 export default defineComponent({
 	name: "menu",
 	components:{
-		Navigation, Search
+		Navigation, Search, Notification
 	},
 	setup(){
 		return () => (
@@ -22,7 +22,9 @@ export default defineComponent({
 					<div class="content-search">
 						<Search></Search>
 					</div>
-					<div class="content-uesr">4444</div>
+					<div class="content-uesr">
+						<Notification></Notification>
+					</div>
 				</div>
 			</div>
 		)
