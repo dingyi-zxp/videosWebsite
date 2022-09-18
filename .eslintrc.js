@@ -7,6 +7,7 @@ module.exports = {
 		ecmaFeatures: {
 			// Allows for the parsing of JSX
 			tsx: true,
+			jsx:true
 		},
 	},
 	extends: [
