@@ -1,4 +1,4 @@
-import { defineComponent,h } from "vue";
+import { defineComponent,h, ref, watch } from "vue";
 import NavItem from "./NavigationItem/NavigationItem"
 import './Navigation.scss'
 export default defineComponent({
@@ -9,7 +9,25 @@ export default defineComponent({
 
     setup() {
 			const originClass = 'navigation'
-			const arr = ['321','iul','22']
+			const arr = [
+				{
+					id: 1,
+					cate: "home"
+				},
+				{
+					id: 2,
+					cate: 'program'
+				},
+				{
+					id: 3,
+					cate: 'movie'
+				}
+			]
+			const currId = ref(1)
+			watch(currId, (newVal,oldVal) => {
+					currId.value = newVal
+					console.log(currId.value);
+			})
 			return () => (
 					h(
 						'div',
@@ -17,7 +35,14 @@ export default defineComponent({
 						arr.map(item => {
 							return h(
 								NavItem,
-								{item, class: `${originClass}-item`}
+								{
+									id: item.id,
+									item: item.cate,
+									class: `${originClass}-item  ${item.id == currId.value ? 'navigation-select ': ''}`,
+									onClickCapture(e: any){
+										currId.value = e.target.id
+									},
+								}
 							)
 						})
 					)

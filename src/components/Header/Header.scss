@@ -12,7 +12,6 @@
 	align-items: center;
 	align-content: center;
 	padding: 15px 42px;
-	background-color: blue;
 
 	&-logo{
 		flex: 2;
@@ -21,20 +20,16 @@
 
 	&-cate{
 		flex: 7;
-		background-color: pink;
 	}
 
 	&-search{
 		color: black;
-		flex: 4;
-		background-color: beige;
 	}
 
 	&-uesr{
 		flex: 2;
 		display: inline-flex;
 		justify-content: space-around;
-		background-color: rosybrown;
 	}
 }
 
