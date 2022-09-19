@@ -6,7 +6,7 @@ export default defineComponent({
 	name: "SearchHeader",
 	setup(props, ctx) {
 		const isSearch = ref(false)	
-		const search = ref('213')
+		const search = ref('')
 
 		return ()=>(
 			h(

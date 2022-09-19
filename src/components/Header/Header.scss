@@ -2,7 +2,6 @@
 	padding: 0;
 	margin: 0;
 	width: 100vw;
-	background-color: pink;
 	font:{
 		size: 32px;
 	}
@@ -18,22 +17,23 @@
 	&-logo{
 		flex: 2;
 		height: auto;
-		background-color: red;
 	}
 
 	&-cate{
-		flex: 9;
+		flex: 7;
 		background-color: pink;
 	}
 
 	&-search{
 		color: black;
-		flex: 3;
+		flex: 4;
 		background-color: beige;
 	}
 
 	&-uesr{
 		flex: 2;
+		display: inline-flex;
+		justify-content: space-around;
 		background-color: rosybrown;
 	}
 }

@@ -4,10 +4,11 @@ import './Header.scss'
 import Navigation from "../Navigation/Navigation"
 import Search from "../Search/Search"
 import Notification from "./Notification/Notification";
+import User from "./User/User"
 export default defineComponent({
 	name: "menu",
 	components:{
-		Navigation, Search, Notification
+		Navigation, Search, Notification,User
 	},
 	setup(){
 		return () => (
@@ -24,6 +25,7 @@ export default defineComponent({
 					</div>
 					<div class="content-uesr">
 						<Notification></Notification>
+						<User></User>
 					</div>
 				</div>
 			</div>
