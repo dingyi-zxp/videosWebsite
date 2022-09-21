@@ -1,5 +1,7 @@
+@import "@/common/scss/common.scss";
+
 .item{
 	color: #C8C9C9;
-	font-size: 20px;
+	font-size: $fontSize;
 	width: auto;
 }

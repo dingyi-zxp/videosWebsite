@@ -1,0 +1,10 @@
+@import "@/common/scss/common.scss";
+
+
+.video{
+	&-img{
+		border-radius: $borderRadius;
+		height: 16vh;
+		width: 18vw;
+	}
+}

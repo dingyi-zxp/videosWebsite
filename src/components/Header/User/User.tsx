@@ -21,11 +21,10 @@ export default defineComponent({
 				},
 				[
 					h(
-						ElAvatar,
+						ElImage,
 						{
 							class: "user-avatar",
-							src:"",
-							shape: "square",
+							src:"https://ssl-pubpic.51yund.com/1304276047.png",
 							fit:"cover"
 						}
 					),

@@ -14,9 +14,7 @@ export default defineComponent({
 		return () => (
 			<div class="header">
 				<div class="content">
-					<div class="content-logo">
-						<ElImage fit="cover" src="https://ssl-pubpic.51yund.com/1303841056.jpg"></ElImage>
-					</div>
+						<ElImage  class="content-logo" fit="cover" src="https://ssl-pubpic.51yund.com/1303841056.jpg"></ElImage>
 					<div class="content-cate">
 						<Navigation></Navigation>
 					</div>

@@ -28,7 +28,6 @@ export default defineComponent({
 					h(
 						ElInput,
 						{
-							class:"search-input",
 							onInput(newVal:string){
 								search.value = newVal
 								this.$emit('update:value',newVal)
@@ -36,6 +35,9 @@ export default defineComponent({
 							},
 							value:search.value,
 							placeholder:"片名、人员、类型",
+							style: { 
+								backgroundColor: "#fff"
+							}
 							
 						},
 						{

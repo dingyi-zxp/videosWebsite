@@ -1,0 +1,23 @@
+@import "@/common/scss/common.scss";
+
+.videos{
+	margin: 0 map-get($padding-map, w-general );
+	width: 100vw - map-get($padding-map, w-general ) * 2;
+
+	&-frame{
+		margin-bottom: map-get($margin-map, videoList );
+	}
+
+	&-title {
+		margin-bottom: 1vh;
+		font-size: 1.5vw;
+	}
+
+	&-list{
+		display: flex;
+	}
+
+	&-item{
+		margin-right: 0.4vw;
+	}
+}

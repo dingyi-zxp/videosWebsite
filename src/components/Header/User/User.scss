@@ -3,11 +3,13 @@
 	align-items: center;
 
 	&-avatar{
-		margin-right: 4px;
+		margin-right: 7px;
+		height: 1.7vw;
+		width: 1.7vw;
 	}
 
 	&-status {
-		width: 18px;
-		height: 18px;
+		width: 1vw;
+		height: 1vw;
 	}
 }

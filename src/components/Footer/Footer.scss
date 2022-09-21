@@ -1,0 +1,13 @@
+.footer{
+	display: flex;
+	justify-content: center;
+	padding: 0;
+	margin: 10vh auto 0;
+	height: auto;
+	width: 100%;
+	
+	&-social{
+		margin: 0.7vw;
+		margin-bottom: 1vh;
+	}
+}
