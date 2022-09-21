@@ -17,7 +17,7 @@ export default defineComponent({
 					{
 						class: "sug-screen",
 						src: "https://ssl-pubpic.51yund.com/1304273761.jpg",
-						fit: "cover"
+							fit: "cover",
 
 					}
 				)

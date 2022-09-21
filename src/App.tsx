@@ -16,8 +16,8 @@ export default defineComponent({
 			<div >
 			<Menu></Menu>
 			<SuggestedVideo></SuggestedVideo>
-			<VideoList></VideoList>
-			<Footer></Footer>
+			<VideoList class="main-bottom"></VideoList>
+			<Footer class="main-bottom"></Footer>
 				</div>
 		)
 	}

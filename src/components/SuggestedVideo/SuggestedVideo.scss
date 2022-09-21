@@ -1,9 +1,12 @@
+@import "@/common/scss/color";
 .sug{
 	overflow: hidden;
 	height: auto;
 	width: 100%;
+	background-color: $backgroundColor;
 	&-screen {
-		height: 90vh;
+		opacity: 0.7;
+		height: 94vh;
 		width: 100%;
 	}
 }
