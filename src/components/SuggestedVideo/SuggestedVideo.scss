@@ -5,8 +5,22 @@
 	width: 100%;
 	background-color: $backgroundColor;
 	&-screen {
-		opacity: 0.7;
+		opacity: 1;
 		height: 94vh;
 		width: 100%;
 	}
+
+	&-left-vignette{	
+		background: linear-gradient(77deg,rgba(20,20,20,.6),transparent 85%);
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    right: 26.09%;
+    top: 0;
+    transition: opacity .5s;
+	}
 }
+
+
+

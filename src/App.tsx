@@ -17,7 +17,7 @@ export default defineComponent({
 			<Menu></Menu>
 			<SuggestedVideo></SuggestedVideo>
 			<VideoList class="main-bottom"></VideoList>
-			<Footer class="main-bottom"></Footer>
+			<Footer  class="main-footer"></Footer>
 				</div>
 		)
 	}
