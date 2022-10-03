@@ -2,6 +2,7 @@ import {ElAvatar, ElImage} from "element-plus"
 import { render ,h, ref, defineComponent} from "vue"
 import { UserStatusUp, UserStatusDown } from "@/utils/icons"
 import "./User.scss"
+import {log} from "console"
 export default defineComponent({
 	name: "User",
 
@@ -9,36 +10,21 @@ export default defineComponent({
 		setup()
 		{
 		const oper = ref(false) 
-		return () => h(
-				'div',
-				{
-					onClick(event:any){
-						oper.value = !oper.value
-						console.log(oper.value,!oper.value);
+		
+		function mouseover() {
+			oper.value = true
+		}
 
-					},
-					class: 'user'
-				},
-				[
-					h(
-						ElImage,
-						{
-							class: "user-avatar",
-							src:"https://ssl-pubpic.51yund.com/1304276047.png",
-							fit:"cover"
-						}
-					),
+		function mouseleave(){
+			oper.value = false
+		}
 
-					h(
-						ElImage,
-						{
-							class: "user-status",
-							src: oper.value ? UserStatusUp : UserStatusDown,
-							fit:"cover"
-						}
-					)
-				]
-			)
+		return () => (
+			<div class='user' onMouseover={mouseover} onMouseleave={mouseleave} onClick={() => oper.value = !oper.value }>
+				<ElImage class="user-avatar" src="https://ssl-pubpic.51yund.com/1304276047.png" fit="cover"></ElImage>
+				<ElImage class="user-status" src={oper.value ? UserStatusUp : UserStatusDown} fit="cover"></ElImage>
+			</div>
+		)
 		}
 	
 }) 

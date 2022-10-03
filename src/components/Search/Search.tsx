@@ -1,6 +1,7 @@
 import {defineComponent, h, ref} from "vue";
 import { SearchIcon } from "@/utils/icons"
 import "./Search.scss"
+import {log} from "console";
 
 export default defineComponent({
 	name: "SearchHeader",
@@ -9,6 +10,7 @@ export default defineComponent({
 		const search = ref('')
 
 		return ()=>(
+		
 			h(
 				'div',
 				{ class: 'search' },
@@ -31,10 +33,24 @@ export default defineComponent({
 							class:"search-input",
 							onInput(newVal:string){
 								search.value = newVal
-								this.$emit('update:value',newVal)
+								
+								this.emit('update:value',newVal)
 								
 							},
+							onChange(str:any){
+								search.value = str
+								console.log("cnaegi",str);
+								
+							},
+							onBlur(event:any){
+								if (search.value == ''){
+									isSearch.value = false
+								}
+								console.log(event,"event")
+							},
+							
 							value:search.value,
+							autofocus:true,
 							placeholder:"片名、人员、类型",
 							
 						},
