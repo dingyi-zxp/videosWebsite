@@ -1,0 +1,27 @@
+
+@import "@/common/scss/color";
+.status{
+	height: auto;
+	width: auto;
+	background-color: pink;
+
+	&-menu{
+		display: flex;
+		padding: 10px;
+		height: auto;
+		width: auto;
+		background-color: red;
+
+	}
+
+	&-tag{}
+
+	&-icon{ 
+		height: 3.4vw;
+		width: 3.4vw
+	}
+}
+
+ul li{
+	list-style: none;
+}

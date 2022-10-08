@@ -5,11 +5,12 @@ import Navigation from "../Navigation/Navigation"
 import Search from "../Search/Search"
 import Notification from "./Notification/Notification";
 import User from "./User/User"
+import UserStatus from "../UserStatus/UserStatus";
 
 export default defineComponent({
 	name: "menu",
 	components:{
-		Navigation, Search, Notification,User
+		Navigation, Search, Notification,User, UserStatus
 	},
 	
 	data(){
@@ -58,6 +59,9 @@ export default defineComponent({
 						<Notification></Notification>
 						<User></User>
 					</div>
+				</div>
+				<div class={"UserMenu"}>
+					<UserStatus></UserStatus>
 				</div>
 			</div>
 		

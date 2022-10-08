@@ -1,0 +1,45 @@
+
+@import "@/common/scss/color";
+.status{
+	height: auto;
+	width: auto;
+
+	&-menu{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 10px;
+		height: auto;
+		width: auto;
+		background: rgba($color: #000000, $alpha: 0.7);
+	}
+
+	&-tag{
+
+		margin: 0 0.6vw;
+	}
+
+	&-icon{ 
+		height: 3.3vw;
+		width: 3.3vw
+	}
+
+	&-tag {
+		font-weight: 400;
+		font-size: 1.6vw;
+	}
+
+	&-mode{
+		height: 1.4vw;
+		width: 1.4vw;
+
+		&-opacity {
+			@extend .status-mode;
+			opacity: 0;
+		}
+	}
+}
+
+ul li{
+	list-style: none;
+}

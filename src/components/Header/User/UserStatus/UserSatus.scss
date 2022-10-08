@@ -1,0 +1,16 @@
+@import "@/common/scss/color";
+.status{
+
+	display: absolute;
+
+	height: 200vh;
+	background-color: red;
+	z-index: 999;
+	height: auto;
+	width: 27vw;
+	font-size: 1vh;
+	
+}
+ul li{
+list-style-type:none;
+}
