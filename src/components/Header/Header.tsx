@@ -1,6 +1,7 @@
 import { defineComponent,ref ,onMounted} from "vue";
 import './Header.scss'
 
+
 import Navigation from "../Navigation/Navigation"
 import Search from "../Search/Search"
 import Notification from "./Notification/Notification";
@@ -18,7 +19,7 @@ export default defineComponent({
 			isScroll: false
 		}
 	},
-	setup(){
+	setup(props, { slots }){
 		let scroll_height:any =
 				document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset;
 		let isScroll = ref(scroll_height > 0 ? true : false)
@@ -50,18 +51,17 @@ export default defineComponent({
 				<div class="content">
 						<ElImage  class="content-logo" fit="cover" src="https://ssl-pubpic.51yund.com/1303841056.jpg"></ElImage>
 					<div class="content-cate">
-						<Navigation></Navigation>
+						{ slots.nav && slots.nav() }
 					</div>
 					<div class="content-search">
-						<Search></Search>
+						{ slots.search && slots.search() }
 					</div>
 					<div class="content-uesr">
-						<Notification></Notification>
-						<User></User>
+						{ slots.user && slots.user() }
 					</div>
 				</div>
 				<div class={"UserMenu"}>
-					<UserStatus></UserStatus>
+					{slots.rightDown && slots.rightDown() }
 				</div>
 			</div>
 		
