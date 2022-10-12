@@ -5,16 +5,18 @@ import "./User.scss"
 export default defineComponent({
 	name: "User",
 		// 用户操作
-		setup()
+		setup(prop,{ emit })
 		{
 		const oper = ref(true) 
 		
 		function mouseover() {
 			oper.value = true
+			emit('oper', oper.value)
 		}
 
 		function mouseleave(){
 			oper.value = false
+			emit('oper', oper.value)
 		}
 
 		return () => (

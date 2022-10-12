@@ -1,16 +1,58 @@
 @import "@/common/scss/color";
 .sug{
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: relative;
 	overflow: hidden;
 	height: auto;
 	width: 100%;
-	background-color: $backgroundColor;
-	&-screen {
-		opacity: 1;
-		height: 94vh;
-		width: 100%;
+
+	&-row{
+		padding-bottom: 40%;
+		position: relative;
+		background-color: #000;
+		touch-action: pan-y;
+		user-select: none;
+		-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 	}
 
+	&-billboard{
+		background-color: #000;
+    height: 56.25vw;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+	}
+
+	&-screen {
+		background-position: 50%;
+    background-size: cover;
+    bottom: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    filter: alpha(opacity=100);
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity .4s cubic-bezier(.665,.235,.265,.8) 0s;
+    width: 100%;
+	}
+
+	&-wrapper{
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
 	&-left-vignette{	
+
+		height: 100%;
 		background: linear-gradient(77deg,rgba(20,20,20,.6),transparent 85%);
     bottom: 0;
     left: 0;
@@ -19,6 +61,19 @@
     right: 26.09%;
     top: 0;
     transition: opacity .5s;
+	}
+
+	&-bottom-vignette{
+		background-color: transparent;
+    background-image: linear-gradient(180deg,hsla(0,0%,8%,0) 0,hsla(0,0%,8%,.15) 15%,hsla(0,0%,8%,.35) 29%,hsla(0,0%,8%,.58) 44%,#141414 68%,#141414);
+    background-position: 0 top;
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
+    bottom: -1px;
+    height: 14.7vw;
+    opacity: 1;
+    top: auto;
+    width: 100%;
 	}
 }
 

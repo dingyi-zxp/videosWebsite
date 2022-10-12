@@ -1,11 +1,21 @@
 import {defineComponent, h} from "vue";
-import VideoItem from "./VideoItem/VideoItem"
+import video_item from "./VideoItem/VideoItem"
 import "./VideoList.scss"
+
+type videoObject = {
+	name: string,
+	img: string
+}
+type videoListObject = {
+	title: string,
+	videos: Array<videoObject>
+}
+
 export default defineComponent({
 	name:"VideoList",
 
 	component:[
-		VideoItem
+		video_item
 	],
 	
 	setup(){
@@ -37,51 +47,27 @@ export default defineComponent({
 				]
 			}
 		]
+		
+		function videoList( videosObject:videoListObject ){
+			const videos = videosObject.videos
+			const list = <div class={ "videos" }>
+				<div class={ "videos-title " }> { videosObject.title } </div>
+				<div class={ "videos-list" }>
+				{
+					videos.map(cover => {
+						return <div class={ "videos-item" }>
+							<video_item video={cover} />
+						</div>
+					})
+				}
+			</div>
+			</div>
 
-		return () => h(
-			'div',
-			{
-				class:"videos"
-			},
-			[
-				arr.map(item => {
-					return ( 
-						h(
-							"div",
-							{
-								class:"videos-frame"
-							},
-							[ 
-								h(
-									"div",
-									{ class:"videos-title" },
-									item.title,
-								),
-								h(
-									'div',
-									{
-										class:"videos-list"
-									},
-									[
-										item.videos.map(video => {
-											return(
-												h(
-													VideoItem,
-													{
-														class: "videos-item",
-														video:video
-													}
-												)
-											)
-										})
-									]
-								 )
-							],
-						)
-					)				
-			 })
-			]
-			
-		)
-	}
+			return list
+		}
+		return () => arr.map(item => {
+				return videoList(item)
+			})
+		}
+	
 })

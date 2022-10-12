@@ -13,8 +13,8 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/browse",
     name: "home",
-		component: () => import("../views/home")
-  },
+		component: () => import("@views/home")
+	},
 ];
 
 // 此处由【new VueRouter】的方式修改为【createRouter】的方式 其余无变化

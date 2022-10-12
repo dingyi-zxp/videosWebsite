@@ -1,8 +1,10 @@
 
 @import "@/common/scss/color";
 .status{
+	z-index: 99999;
 	height: auto;
 	width: auto;
+
 
 	&-menu{
 		display: flex;

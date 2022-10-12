@@ -9,13 +9,6 @@
 	overflow: hidden;
 	height: auto;
 	width: 100%;
-	opacity: 1;
-	background-image: linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
-	transition: background-color .4s;
-    transition-property: background-color;
-    transition-duration: 0.4s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
 	font{
 		size: 32px;
 	}
@@ -37,6 +30,14 @@
 	padding: map-get($padding-map, h-general) map-get($padding-map, w-general );
 	height: 100%;
 	width: auto;
+
+	opacity: 1;
+	background-image: linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
+	transition: background-color .4s;
+    transition-property: background-color;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
 
 	&-logo{
 		flex: 2;
@@ -64,8 +65,8 @@
 .UserMenu{
 	position: position;
 	float: right;
+	padding-right: 4.7vw;
 	z-index: 8888;
-
 	width: auto;
 	height: auto;
 }

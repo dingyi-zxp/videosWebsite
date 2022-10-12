@@ -1,4 +1,4 @@
-import { defineComponent,ref ,onMounted} from "vue";
+import { defineComponent,ref ,onMounted,vShow, reactive, watch} from "vue";
 import './Header.scss'
 
 
@@ -14,12 +14,22 @@ export default defineComponent({
 		Navigation, Search, Notification,User, UserStatus
 	},
 	
-	data(){
-		return {
-			isScroll: false
+	props: {
+		oper: {
+			type: Boolean
 		}
 	},
-	setup(props, { slots }){
+
+	watch:{
+		oper(newVal,oldVal) {
+			console.log('nn',newVal,oldVal);
+			
+		}
+	},
+	setup(props, { slots,emit }){
+
+		console.log(props);
+		
 		let scroll_height:any =
 				document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset;
 		let isScroll = ref(scroll_height > 0 ? true : false)
@@ -41,14 +51,9 @@ export default defineComponent({
 		
 		window.onscroll = debouceScroll
 
-		onMounted(() => {
-			
-		}) 
-
-
 		return () => 
-		<div class={ `header ${isScroll.value ? "scrollTop": ""}`} >
-				<div class="content">
+		<div class={ 'header'}  >
+			<div class={ `content ${isScroll.value ? 'scrollTop': ''} ` }>
 						<ElImage  class="content-logo" fit="cover" src="https://ssl-pubpic.51yund.com/1303841056.jpg"></ElImage>
 					<div class="content-cate">
 						{ slots.nav && slots.nav() }
@@ -58,10 +63,11 @@ export default defineComponent({
 					</div>
 					<div class="content-uesr">
 						{ slots.user && slots.user() }
+					{props.oper}
 					</div>
 				</div>
-				<div class={"UserMenu"}>
-					{slots.rightDown && slots.rightDown() }
+				<div class={"UserMenu"}  v-show={ props.oper }>
+					{slots.menu && slots.menu() }
 				</div>
 			</div>
 		

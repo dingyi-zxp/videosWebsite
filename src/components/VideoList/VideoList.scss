@@ -1,6 +1,7 @@
 @import "@/common/scss/common.scss";
 
 .videos{
+	position: relative;
 	margin: 0 map-get($padding-map, w-general );
 	width: 100vw - map-get($padding-map, w-general ) * 2;
 
