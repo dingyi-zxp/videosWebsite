@@ -3,7 +3,7 @@
 
 .header {
 	position: fixed;
-	z-index: 999;
+	z-index: 1;
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
@@ -66,7 +66,7 @@
 	position: position;
 	float: right;
 	padding-right: 4.7vw;
-	z-index: 8888;
+	z-index: 1;
 	width: auto;
 	height: auto;
 }

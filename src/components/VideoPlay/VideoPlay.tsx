@@ -1,10 +1,16 @@
 import "./VideoPlay.scss"
-const videoPlay = <video class={ "video1" }
-controls 
-autoplay 
-preload="auto" 
-src="http://rjlnywy6l.hn-bkt.clouddn.com/videos/2077.mp4"></video>
 
+function videoPlay(src:string){
+	
+	const video = <video class={ "video1" }
+	controls 
+	autoplay
+	muted
+	preload="auto" 
+	src={src}></video>
+
+	return video
+}
 export{
 	videoPlay
 }
