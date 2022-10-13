@@ -2,7 +2,8 @@ import {ElImage} from "element-plus";
 import {defineComponent, h, onBeforeMount, reactive,watch} from "vue";
 import "./SuggestedVideo.scss"
 import { videoPlay } from "../VideoPlay/VideoPlay";
-import { restartIcon,svgRestard } from "../IconRound/IconRound";
+import { restartIcon,svgIcons } from "../IconRound/IconRound";
+import maturity_rating from "../MaturityRating/MaturityRating"
 
 export default defineComponent({
 	name: "SuggestedVideo",
@@ -53,7 +54,10 @@ export default defineComponent({
 				</div>
 				<div class={ "embedded" }>
 				{
-					restartIcon(svgRestard)
+					state.isLoadVideo ? null : restartIcon( svgIcons.svgMute )
+				}
+				{
+					maturity_rating("19+")
 				}
 				</div>
 			</div> 
