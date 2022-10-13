@@ -2,7 +2,7 @@ import {ElImage} from "element-plus";
 import {defineComponent, h, onBeforeMount, reactive,watch} from "vue";
 import "./SuggestedVideo.scss"
 import { videoPlay } from "../VideoPlay/VideoPlay";
-import {log} from "console";
+import { restartIcon,svgRestard } from "../IconRound/IconRound";
 
 export default defineComponent({
 	name: "SuggestedVideo",
@@ -50,6 +50,11 @@ export default defineComponent({
 						<div class={ "sug-left-vignette" }></div>
 						<div class={ "sug-bottom-vignette" }></div>
 					</div>
+				</div>
+				<div class={ "embedded" }>
+				{
+					restartIcon(svgRestard)
+				}
 				</div>
 			</div> 
 			</div>
