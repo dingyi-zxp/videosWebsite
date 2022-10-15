@@ -29,7 +29,8 @@ export default defineComponent({
 					},
 					{
 						name: "dog",
-						img:"https://ssl-pubpic.51yund.com/1304643773.jpg"
+						img:"https://ssl-pubpic.51yund.com/1304643773.jpg",
+
 					}
 				]
 			},
@@ -37,7 +38,11 @@ export default defineComponent({
 				title: "当前热门",
 				videos: [
 					{
-						name: "cat",
+						name: "龙与虎",
+						img:"https://ssl-pubpic.51yund.com/1304643773.jpg"
+					},
+					{
+						name: "猫娘乐园",
 						img:"https://ssl-pubpic.51yund.com/1304643773.jpg"
 					},
 					{
@@ -54,13 +59,14 @@ export default defineComponent({
 				<div class={ "videos-title " }> { videosObject.title } </div>
 				<div class={ "videos-list" }>
 				{
-					videos.map(cover => {
+					videos.map(( cover,index ) => {
 						return <div class={ "videos-item" }>
 							<video_item video={cover} />
 						</div>
 					})
 				}
 			</div>
+
 			</div>
 
 			return list

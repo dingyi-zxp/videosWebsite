@@ -2,7 +2,7 @@
 
 .videos{
 	position: relative;
-	margin: 0 map-get($padding-map, w-general );
+	margin: 1.3vh map-get($padding-map, w-general );
 	width: 100vw - map-get($padding-map, w-general ) * 2;
 
 	&-frame{
@@ -16,6 +16,7 @@
 
 	&-list{
 		display: flex;
+		margin-bottom: 1.7vw;
 	}
 
 	&-item{

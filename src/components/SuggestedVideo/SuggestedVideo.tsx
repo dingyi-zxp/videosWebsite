@@ -56,13 +56,12 @@ export default defineComponent({
 			video?.addEventListener('playing',function (){
 				videoState.playing = true
 				videoState.ended = false
-				console.log('heelou');
-				
 			})
 
 			video?.addEventListener('ended', function(){
 				videoState.ended = true
 				videoState.playing = false
+				btnIcon.value = svgVideoIcon.svgRestar
 			})
 
 		}
@@ -77,10 +76,8 @@ export default defineComponent({
 			setTimeout(() => {
 				state.videoSrc = 'http://rjlnywy6l.hn-bkt.clouddn.com/videos/2077.mp4'
 			},2000)
-				console.log('eee');
-				
 		}
-
+		
 		function svgBtnStatus():any{
 			if ( videoState.ended ){
 				return svgVideoIcon.svgRestar

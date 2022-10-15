@@ -2,9 +2,67 @@
 
 
 .video{
+	margin: 0.3vw 0;
+	background-color: #232526;
+	width: 16vw;
+	border-radius: $borderRadius ;
 	&-img{
-		border-radius: $borderRadius;
-		height: 20vh;
-		width: 14vw;
+		box-shadow: 0 7px 5px -5px #434343;
+		border-radius: $borderRadius $borderRadius 0 0;
+		width: auto;
 	}
+}
+
+.details{
+	margin: 0 0.5vw;
+	padding-top: 0.1vw;
+	padding-bottom: 1vw;
+	&-layout{
+
+	}
+
+	&-upper{
+		&-title{
+
+		}
+	}
+
+	&-btn{
+		display: flex;
+	}
+
+	&-rating{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	&-time{
+		display: flex;
+		align-items: center;
+		margin-left: 0.7vw;
+	}
+	&-type{
+		display: flex;
+		align-items:center;
+	}
+}
+
+.layout{
+	margin: 1.3vh 0;
+}
+
+.flex-hypodispersion{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+}
+
+.flex-align-center{
+		display: flex;
+		align-items:center;
+}
+
+.font-small{
+	font-size: 0.9vw;
 }
