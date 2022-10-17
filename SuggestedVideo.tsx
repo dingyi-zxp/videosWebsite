@@ -5,7 +5,6 @@ import { videoPlay } from "../VideoPlay/VideoPlay";
 import  round_btn  from "../IconRound/IconRound";
 import maturity_rating from "../MaturityRating/MaturityRating"
 import { svgVideoIcon, close_black } from "../../utils/svgIcons"
-import { play_svg,videoRate } from "../../utils/svgIcons";
 
 export default defineComponent({
 	name: "SuggestedVideo",
@@ -90,7 +89,7 @@ export default defineComponent({
 
 		function testVideo() {
 			setTimeout(() => {
-				state.videoSrc = 'http://rjlnywy6l.hn-bkt.clouddn.com/videos/%E6%A0%A1%E7%83%AD%E6%81%8B%E5%86%B0%E6%B7%87%E6%B7%8B-%E9%AB%98%E8%B5%AB-Regina-%E6%A0%A1%E7%83%AD%E6%81%8B%E5%86%B0%E6%B7%87%E6%B7%8B-%E9%AB%98%E8%B5%AB-Regina-1080P-.mp4'
+				state.videoSrc = 'http://rjlnywy6l.hn-bkt.clouddn.com/videos/%E4%BD%A0%E7%9A%84%E5%85%A8%E5%8D%A1%E6%B1%A0%E8%B7%AF%E8%BF%87-%E4%BD%A0%E7%9A%84%E5%85%A8%E5%8D%A1%E6%B1%A0%E8%B7%AF%E8%BF%87-1080P-.mp4'
 					haveVideo()
 			},2000)
 		}
@@ -125,7 +124,7 @@ export default defineComponent({
 		function clickClear() {
 			console.log('clearState');
 			
-			emit('clearState', true)
+			emit('clearState', false)
 		}
 
 		return () => (
@@ -156,27 +155,6 @@ export default defineComponent({
 				{
 					maturity_rating("19+")
 				}
-				</div>
-				<div style={ "opacity: 1" }>
-					<div class={ "sug-img-title" }>
-						<ElImage class={ "sug-img-title-logo" } src="https://occ-0-4295-325.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABQsmLCxDoxsCXZTeom0U3LvYZsPcrZ4Ut93E7eSPnPJBtDsFta-_PV4O8COaZj1I4Tf9RhRFbXwTdPxKXXQsu5s4xkIMuDhw3g3KqF3WWnQ.webp?r=b9b" style="width: 100%; opacity: 1;"></ElImage>
-
-						<div class={ "sug-img-logo-btn" }>
-							<a class={ "sug-img-logo-btn-play" } tabindex="0" href="#">
-								<button class={ "sug-img-logo-btn-play-btn" } tabindex="-1">
-									<div class={  "sug-img-logo-btn-play-btn-svg" } >
-										{ play_svg }
-									</div>
-									<div class={ "sug-img-logo-btn-play-btn-word" }>
-										<span class={ "sug-img-logo-btn-play-btn-word-ltr" }>播放</span>
-									</div>
-									
-								</button>
-							</a>
-							<round_btn class={ "sug-img-logo-btn-play-btn-margin" } svgIcon={ videoRate.love }></round_btn>
-							<round_btn  class={ "sug-img-logo-btn-play-btn-margin" } svgIcon={ videoRate.like }></round_btn>
-						</div>
-					</div>
 				</div>
 			</div> 
 			</div>

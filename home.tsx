@@ -15,18 +15,13 @@ export default defineComponent({
 		const videoId = ref<string>("213")
 		const openPremodel = ref<boolean>( true )
 		const tesx = "xx"
-
-		function clearState( val:any ){
-			openPremodel.value = !val
-		}
-
 		return () => (
 			<div >
 				<SuggestedVideo videoId= { tesx }></SuggestedVideo>
 				<VideoList></VideoList>
 				{
 					openPremodel.value ?
-					<focuse_video onClearState={ clearState } ></focuse_video>
+					<focuse_video ></focuse_video>
 						:
 						<div />
 				}

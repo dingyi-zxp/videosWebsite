@@ -15,12 +15,20 @@ export default defineComponent({
 		fpisode_video
 	},
 
-	setup(props, ctx) {
+	setup(props, { emit }) {
 		let arr = [ "卡普空" , "飞碟社", "桃乃木", "陈瑞"]
+
+		function clickClear( val:any ) {
+			
+			console.log('2');
+			
+			emit('clearState', true)
+		}
+
 		return () => <div class={ "previewModal" }>
 			<div role="dialog" tabindex={ -1 } 
 			class={ "previewModal-container" }>
-			<sug  videoId= "eee"></sug>
+			<sug  videoId= "eee" onClearState={ (val:boolean) => clickClear(val) } haveClose={ true }></sug>
 			<div class={ "previewModal-container-info" }>
 				<div class={ "flex-distribution" }>
 					<div class={ "flex-distribution-max" }>

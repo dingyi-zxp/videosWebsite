@@ -1,7 +1,7 @@
 import {defineComponent, h,withDirectives, ref,vShow, reactive} from "vue";
 import { SearchIcon } from "@/utils/icons"
 import "./Search.scss"
-import {log} from "console";
+
 import {ElImage, ElInput} from "element-plus";
 
 export default defineComponent({

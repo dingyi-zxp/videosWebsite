@@ -43,7 +43,7 @@ export default defineComponent({
 
 		return () => 	<div class={"menu"}>
 			{ menu }
-			<div>{ state.te }</div>
+			<div>{ state.oper }</div>
 		</div>
 	}
 })
