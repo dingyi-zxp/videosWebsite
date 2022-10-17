@@ -1,0 +1,89 @@
+.focuse{
+	tabindex: -1;
+	opacity: 0.7;
+}
+.previewModal{
+	width: 100%;
+	height: 100vw;
+	z-index:9;
+
+	&-container{
+
+		&-margin-bottom{
+			margin-bottom: 5px;
+		}
+    position: absolute;
+		width: 80vw;
+    top: 37vh;
+    left: 10vw;
+    transform-origin: center top;
+    transform: translateX(0px) translateY(calc(-214px + 2em)) scaleX(1) scaleY(1) translateZ(0px);
+    box-shadow: rgb(0 0 0 / 75%) 0px 3px 10px;
+    z-index: 2;
+    opacity: 1;
+		background-color: #232526;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    overflow: hidden;
+    will-change: transform;
+
+		&-info{
+
+			position: relative;
+			padding-top: 18vh;
+			padding: 31vh  2vw 2vw;
+		}
+
+		&-actor{
+			&-hint{
+			}
+		}
+
+	}
+	&-backDrop{
+		background-color: #000;
+		height: 100%;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+	}
+}
+
+.flex-distribution{
+	display: flex;
+
+	&-max {
+		flex: 6;
+	}
+
+	&-min {
+		flex: 4;
+	}
+}
+
+.flex-center-time {
+	display: flex;
+	align-items: center;
+}
+
+.many-word{
+	font-size: 14px;
+}
+
+
+a:link{
+	color: #fff;
+	text-decoration:none;
+}
+a:visited{
+	color: #fff;
+	text-decoration:none;
+}
+a:hover{
+	color: #fff;
+	text-decoration: underline #fff;
+}
+
+

@@ -75,6 +75,17 @@
     width: 100%;
 	}
 
+	&-close{
+		&-previewModal{
+			position: absolute;
+			cursor: pointer;
+			right: 0;
+			top: 0;
+			z-index: 2;
+			margin: 1em;
+		}
+
+	}
 }
 
 

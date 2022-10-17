@@ -7,7 +7,7 @@
 	width: 16vw;
 	border-radius: $borderRadius ;
 	&-img{
-		box-shadow: 0 7px 5px -5px #434343;
+    box-shadow: rgb(0 0 0 / 75%) 0px 3px 10px;
 		border-radius: $borderRadius $borderRadius 0 0;
 		width: auto;
 	}

@@ -1,12 +1,12 @@
 import "./VideoPlay.scss"
 
-function videoPlay(src:string,ref:string){
+function videoPlay(id:string,src:string,ref:string){
 	
 	const video = <video class={ "video1" }
-	autoplay
 	muted
+	autoplay
 	preload="auto" 
-	id="Id"
+	id={id}
 	src={src}></video>
 	
 	return video

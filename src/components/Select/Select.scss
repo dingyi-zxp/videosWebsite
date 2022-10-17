@@ -1,0 +1,93 @@
+.select{
+	position: relative;
+	&-upper{
+		position: relative;
+	}
+	&-round{
+		@extend .select-round;
+		display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    font-size: 16px;
+    padding: 0.5em 1em;
+    color: white;
+    cursor: pointer;
+    border-radius: 0.2em;
+	}
+
+	&-state{
+			transform: rotate(180deg);
+		&-icon{
+			padding-left: 3vw;
+
+		}
+	}
+
+	&-content{
+    position: absolute;
+    cursor: pointer;
+    color: white;
+    list-style-type: none;
+    border: 1px solid rgb(77, 77, 77);
+    margin-top: 0.3vh;
+    font-size: 18px;
+    z-index: 1;
+    background-color: rgb(36, 36, 36);
+    white-space: nowrap;
+    column-gap: 1.8em;
+    max-height: max(10em, 331.773px - 2rem);
+    overflow: auto;
+    padding: 1vh 0px;
+		
+		&-round{
+			@extend .select-round;
+			display:inline-block;
+		}
+	}
+
+	&-set{
+		&-fpisode{
+			font-weight: 1000;
+		}
+
+		&-margin{
+		  padding: 0.5em 0.8em;
+			display: block;
+			break-inside: avoid;
+		}
+
+		&-describe{
+			margin-left: 4px;
+			font-size: 14px;
+		}
+
+		&-all{
+			display: flex;
+			justify-content: center;
+			font-size: 18px;
+		}
+
+		&-flex{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+	}
+}
+
+.select-round{
+   border: 0.1em solid rgb(77, 77, 77);
+   background-color: rgb(36, 36, 36);
+   border-radius: 0.2em;
+}
+
+.cut-line{
+	margin: 1.2vh 0.8vw;
+  border: 1px solid rgb(77, 77, 77);
+}
+
+li:hover{
+	background-color: rgb(77, 77, 77);
+}

@@ -1,0 +1,70 @@
+.fpisode-video{
+	position: relative;
+	margin: 1vw 0;
+	display: flex;
+	justify-content: space-around;
+
+	border-bottom: 1px solid;
+	padding: 24px 0;
+	margin-bottom: 40px;
+
+	&-active{
+		background-color: #333;
+	}
+
+	&-num{
+		display: flex;
+		align-items: center;
+		flex:1;
+		font-size: 56px;
+		font-weight: 1000;
+		display: flex;
+		justify-content: center;
+	}
+
+	&-img{
+		flex: 2;
+		align-items: center;
+		width: 100%;
+
+		&-play{
+			position: absolute;
+			align-items: center;
+			bottom: 0;
+			display: flex;
+			justify-content: center;
+			left: 0;
+			opacity: 0;
+			right: 0;
+			top: 0;
+			transition: opacity .2s ease-in;
+		}
+	}
+
+	&-content{
+		margin: 0  20px;
+		flex: 7;
+		&-upper{
+			margin-bottom: 0.5em;
+			font-size: 18px;
+			display: flex;
+			justify-content: space-between;
+			&-title{
+				display: 1;
+
+			}
+			&-time{
+				
+				font-weight: 200;
+				display: 1;
+			}
+		}
+
+		&-intro{
+			font-size: 14px;
+			font-weight: 300;
+
+		}
+	}
+}
+

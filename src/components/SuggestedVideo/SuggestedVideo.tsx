@@ -4,17 +4,24 @@ import "./SuggestedVideo.scss"
 import { videoPlay } from "../VideoPlay/VideoPlay";
 import  round_btn  from "../IconRound/IconRound";
 import maturity_rating from "../MaturityRating/MaturityRating"
-import { svgVideoIcon } from "../../utils/svgIcons"
+import { svgVideoIcon, close_black } from "../../utils/svgIcons"
 
 export default defineComponent({
 	name: "SuggestedVideo",
 	components:{
 		round_btn
 	},
-	setup() {
+
+	props: {
+		videoId: {
+			type: String
+		}
+	},
+	setup(props) {
 		const state = reactive({
 			videoSrc: '',
-			hasVideoSrc:false
+			hasVideoSrc:false,
+			hasPlay: false
 		})
 
 		const videoState = reactive( {
@@ -25,12 +32,12 @@ export default defineComponent({
 			ended: false
 		})	
 
-		let video   = document.getElementById('Id')
+		let video   = document.getElementById(props.videoId)
 		let btnIcon = ref(svgVideoIcon.svgMute )
 		
 
 		onBeforeMount(() => {
-			console.log('befor');
+			console.log('befor',props.videoId);
 			
 			testVideo()
 			haveVideo()
@@ -44,7 +51,7 @@ export default defineComponent({
 		})
 
 		function initVideoState(){
-			const domVideo = document.getElementById('Id')
+			const domVideo = document.getElementById(props.videoId)
 			videoState.muted = domVideo?.muted
 			videoState.volume = domVideo?.volume
 			video = domVideo
@@ -61,6 +68,10 @@ export default defineComponent({
 			video?.addEventListener('ended', function(){
 				videoState.ended = true
 				videoState.playing = false
+				state.hasVideoSrc = false
+				state.hasPlay = true
+				console.log('hasPlay',state.hasPlay);
+				
 				btnIcon.value = svgVideoIcon.svgRestar
 			})
 
@@ -74,7 +85,8 @@ export default defineComponent({
 
 		function testVideo() {
 			setTimeout(() => {
-				state.videoSrc = 'http://rjlnywy6l.hn-bkt.clouddn.com/videos/2077.mp4'
+				state.videoSrc = 'http://rjlnywy6l.hn-bkt.clouddn.com/videos/%E4%BD%A0%E7%9A%84%E5%85%A8%E5%8D%A1%E6%B1%A0%E8%B7%AF%E8%BF%87-%E4%BD%A0%E7%9A%84%E5%85%A8%E5%8D%A1%E6%B1%A0%E8%B7%AF%E8%BF%87-1080P-.mp4'
+					haveVideo()
 			},2000)
 		}
 		
@@ -91,11 +103,15 @@ export default defineComponent({
 		}
 		
 		function videoClickBtn(){
-			console.log("iulyy",video?.onplaying);
-			
 			if ( videoState.playing ){
 				videoState.muted = !videoState.muted
 				video.muted = videoState.muted
+			} else if ( videoState.ended ) {
+				state.hasVideoSrc = true
+				video.currentTime = 9
+				setTimeout(() => { video.play() } ,100)
+				console.log(video.error);
+				
 			}
 
 			btnIcon.value = svgBtnStatus()			
@@ -106,17 +122,19 @@ export default defineComponent({
 			<div class={ "sug-row" }>
 				<div class={ "sug-wrapper" }>
 					<div class={ "sug-billboard" }>
-						<ElImage v-show={ state.videoSrc == '' } class={ "sug-screen sug-static-image" } 
+						<ElImage v-show={  !state.hasVideoSrc } class={ "sug-screen sug-static-image" } 
 						src="https://occ-0-3188-3187.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABaw5X613QY--I6dGT-PAneHdXsMXoafr3idCWCAN8BhK_bavNXtKBOJcJwDCB3Z9DmYh5C7dX26BfxQV1v31TLngQjsrrbKmuzwH.webp?r=6f4" 
 							fit="cover" />			
-							<div v-show={ state.videoSrc != '' } class={ "sug-screen" }> { videoPlay(state.videoSrc,"video") } </div>
-						<div class={ "sug-left-vignette" }></div>
+						<div v-show={ state.hasVideoSrc} class={ "sug-screen" }> { videoPlay(props?.videoId,state.videoSrc,"video") } </div> <div class={ "sug-left-vignette" }></div>
 						<div class={ "sug-bottom-vignette" }></div>
+						<div class={ "sug-close-previewModal" } > 
+							{ close_black }
+						</div>
 					</div>
 				</div>
 				<div class={ "embedded" }>
 
-					<round_btn v-show={ state.videoSrc != '' } onClick={ videoClickBtn } svgIcon={ btnIcon.value }></round_btn>
+					<round_btn v-show={ state.hasVideoSrc || state.hasPlay} onClick={ videoClickBtn } svgIcon={ btnIcon.value }></round_btn>
 
 
 				{
