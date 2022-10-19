@@ -1,5 +1,6 @@
 import {ElImage} from "element-plus";
 import {defineComponent, h,ref, onBeforeMount, onMounted, reactive,watch} from "vue";
+import router from "../../router/index";
 import "./SuggestedVideo.scss"
 import { videoPlay } from "../VideoPlay/VideoPlay";
 import  round_btn  from "../IconRound/IconRound";
@@ -90,7 +91,7 @@ export default defineComponent({
 
 		function testVideo() {
 			setTimeout(() => {
-				state.videoSrc = 'http://rjlnywy6l.hn-bkt.clouddn.com/videos/%E6%A0%A1%E7%83%AD%E6%81%8B%E5%86%B0%E6%B7%87%E6%B7%8B-%E9%AB%98%E8%B5%AB-Regina-%E6%A0%A1%E7%83%AD%E6%81%8B%E5%86%B0%E6%B7%87%E6%B7%8B-%E9%AB%98%E8%B5%AB-Regina-1080P-.mp4'
+				state.videoSrc = 'http://rjlnywy6l.hn-bkt.clouddn.com/videos/Phonk-_%E9%9B%85%E4%BF%97%E5%85%B1%E8%B5%8F-%E4%BF%97%E5%85%B1%E8%B5%8F-1080P-.mp4'
 					haveVideo()
 			},2000)
 		}
@@ -128,6 +129,14 @@ export default defineComponent({
 			emit('clearState', true)
 		}
 
+		function tabWatch(){
+			console.log('to Watch');
+
+			router.push({
+				path: '/watch'
+			})
+			
+		}
 		return () => (
 		<div id={"sugid"} class={"sug"}>
 			<div class={ "sug-row" }>
@@ -168,7 +177,7 @@ export default defineComponent({
 										{ play_svg }
 									</div>
 									<div class={ "sug-img-logo-btn-play-btn-word" }>
-										<span class={ "sug-img-logo-btn-play-btn-word-ltr" }>播放</span>
+										<span onClick={ tabWatch } class={ "sug-img-logo-btn-play-btn-word-ltr" }>播放</span>
 									</div>
 									
 								</button>

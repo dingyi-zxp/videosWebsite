@@ -14,10 +14,13 @@
 		"@types/node": "^18.7.18",
 		"element-plus": "^2.2.17",
 		"pinia": "^2.0.22",
+		"video.js": "^7.20.3",
 		"vue": "^3.2.37",
 		"vue-router": "^4.1.5"
 	},
 	"devDependencies": {
+		"@types/video.js": "^7.3.49",
+		"@types/vue-router": "^2.0.0",
 		"@typescript-eslint/eslint-plugin": "^5.37.0",
 		"@typescript-eslint/parser": "^5.37.0",
 		"@vitejs/plugin-vue": "^3.1.0",

@@ -3,12 +3,14 @@ import {defineComponent, ref} from "vue";
 import SuggestedVideo from "@/components/SuggestedVideo/SuggestedVideo"
 import VideoList from "@/components/VideoList/VideoList"
 import focuse_video from "../components/FocusVideo/FocusVideo";
+import full_video from "../components/FullVideo/FullVideo";
 export default defineComponent({
 	name: "Home",
 	components: {
 		SuggestedVideo,
 		VideoList,
-		focuse_video
+		focuse_video,
+		full_video
 	},
 
 	setup(){
@@ -21,16 +23,13 @@ export default defineComponent({
 		}
 
 		return () => (
+
 			<div >
-				<SuggestedVideo videoId= { tesx }></SuggestedVideo>
+				<SuggestedVideo></SuggestedVideo>
 				<VideoList></VideoList>
-				{
-					openPremodel.value ?
-					<focuse_video onClearState={ clearState } ></focuse_video>
-						:
-						<div />
-				}
+				<focuse_video></focuse_video>
 			</div>
+
 		)
 	}
 

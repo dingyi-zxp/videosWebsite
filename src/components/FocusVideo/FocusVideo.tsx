@@ -20,8 +20,6 @@ export default defineComponent({
 
 		function clickClear( val:any ) {
 			
-			console.log('2');
-			
 			emit('clearState', true)
 		}
 
