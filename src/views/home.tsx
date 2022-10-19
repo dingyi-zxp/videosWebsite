@@ -4,13 +4,17 @@ import SuggestedVideo from "@/components/SuggestedVideo/SuggestedVideo"
 import VideoList from "@/components/VideoList/VideoList"
 import focuse_video from "../components/FocusVideo/FocusVideo";
 import full_video from "../components/FullVideo/FullVideo";
+import Menu from "@/components/Menu/Menu"
+import Footer from "@/components/Footer/Footer";
 export default defineComponent({
 	name: "Home",
 	components: {
 		SuggestedVideo,
 		VideoList,
 		focuse_video,
-		full_video
+		full_video,
+		Menu,
+		Footer
 	},
 
 	setup(){
@@ -25,9 +29,11 @@ export default defineComponent({
 		return () => (
 
 			<div >
+			<Menu></Menu>
 				<SuggestedVideo></SuggestedVideo>
 				<VideoList></VideoList>
 				<focuse_video></focuse_video>
+			<Footer  class="main-footer"></Footer>
 			</div>
 
 		)

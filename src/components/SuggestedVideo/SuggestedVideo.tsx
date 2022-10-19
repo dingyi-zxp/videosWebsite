@@ -131,9 +131,12 @@ export default defineComponent({
 
 		function tabWatch(){
 			console.log('to Watch');
-
+			let src:string = 'http://rjlnywy6l.hn-bkt.clouddn.com/videos/Phonk-_%E9%9B%85%E4%BF%97%E5%85%B1%E8%B5%8F-%E4%BF%97%E5%85%B1%E8%B5%8F-1080P-.mp4'
 			router.push({
-				path: '/watch'
+				path: `/watch`,
+				query: {
+					src:src
+				}
 			})
 			
 		}
