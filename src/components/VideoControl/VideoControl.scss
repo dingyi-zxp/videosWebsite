@@ -1,0 +1,159 @@
+.control{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	&-progress{
+		margin:  20px 20px;
+	}
+}
+.control-progres{
+	&-all{
+		background-color: #808080;
+		width: 100%;
+		height: 6px;
+		border: 1px ;
+	}
+
+	&-play {
+		width: 100%;
+		z-index: 9;
+		display: flex;
+		align-items: center;
+
+
+		&-flex{
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			width: 100%;
+		}
+
+		&-line {
+			width: 0px;
+			height: 8px;
+			background-color: #FF0000;
+		}
+
+		&-present{
+			z-index: 10;
+			border: 10px solid #ff0000;
+			border-radius:10px;
+		}
+	}
+}
+
+.control-component{
+	margin-top: 35px;
+	padding: 0   20px;
+	display: flex;
+	align-items: center;
+	
+	&-oper{
+		cursor: pointer;
+		flex: 1;
+	}
+
+	&-info {
+		flex: 12;
+
+		&-frame {
+			display: inline-flex;
+			justify-content: center;
+			font-size: 1.5em;
+			font-weight: 200;
+		}
+	}
+}
+
+.volume{
+	&-control{
+		position: absolute;
+		width: 130px;
+		height: 23px;
+		top: 47px;
+		background-color: #808080;
+		border-radius: 23px;
+		overflow: hidden;
+		cursor: pointer;
+		&-percent{
+			background-color: #ff0000;
+			height: 100%;
+		}
+	}
+
+}
+
+
+.gather-control{
+	position: absolute;
+	background-color: #181818;
+	width: 400px;
+	height: 300px;
+	top: -250px;
+	right: 120px;
+	overflow-y: auto;
+
+	&-title{
+		font-size: 1.5em;
+	}
+	&-ltr{
+		margin: 10px 20px;
+	}
+
+	&-content{
+		margin: 10px 0;
+		background-color: #808080;
+		display: flex;
+
+		cursor: pointer;
+		&-img{
+			display: 1;
+			height: 4em;
+			width: 8em;
+		}
+
+		&-right{
+			margin-left: 10px;
+			flex: 1;
+
+			&-title{
+				font-size: 1.3em;
+			}
+
+			&-details{
+				font-size:  0.9em;
+				font-weight: 300;
+			}
+		}
+	}
+}
+
+
+.speed-control{
+	height: 30px;
+	width: 300px;
+	position: absolute;
+	background-color: #fff;
+	top: 40px;
+	right: 20px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 1.5em;
+	color: #000;
+	border-radius: 30px;
+
+	&-select{
+		background-color: #ff0000;
+		height: 100%;
+		border-radius: 30px;
+		color: #fff;
+	}
+
+	&-text{
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		flex: 1;
+	}
+}

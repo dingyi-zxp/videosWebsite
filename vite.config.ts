@@ -15,12 +15,19 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),],
 	server:{
-		port: 7777
+		port: 7777,
+		proxy: {
+			'/Cat':'http://localhost:9860/',
+			changeOrigin: "true",
+      rewrite: (path) => path.replace(/^\/Cat/, '')
+
+
+		}
 	},
 	resolve: {
 		alias: {
 			"@": resolve(__dirname, "/src"),
 			"@views":resolve(__dirname, "/src/views")
 		}
-	}
+	},
 })

@@ -1,6 +1,5 @@
 import {ElImage} from "element-plus";
 import {defineComponent, h, PropType, reactive, ref} from "vue";
-import router from "../../../router/index"
 import "./VideoItem.scss"
 import round_btn from "../../IconRound/IconRound";
 import { videoRate,dot } from "../../../utils/svgIcons";
@@ -47,12 +46,11 @@ export default defineComponent({
 	}
 	function toVideoInfo(){
 		console.log("to");
-		router.push({
-			path: `/browse/focuse`
-		})
 		
 	}
-			return () => <div class={ "video" }>
+			return () => <div class={ "video" }
+			onClick={ clickVideo }
+			>
 				<ElImage class={ "video-img" } src={video.img} fit="cover"></ElImage>
 				<div class={ "details" }>
 					<div class={ "details-layout" }>
@@ -60,7 +58,7 @@ export default defineComponent({
 							<div class={ "details-upper-title" }>
 								{ video.name }
 							</div>
-							<round_btn onClick={ toVideoInfo } class={ "details-upper-info" } svgIcon={ videoRate.arrow_down }></round_btn>
+							<round_btn onClick={ () => { toVideoInfo }} class={ "details-upper-info" } svgIcon={ videoRate.arrow_down }></round_btn>
 						</div>
 
 						<div class={ "details-btn layout flex-hypodispersion" }>

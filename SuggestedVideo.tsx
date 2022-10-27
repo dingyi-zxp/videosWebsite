@@ -41,17 +41,16 @@ export default defineComponent({
 		
 
 		onBeforeMount(() => {
-			console.log('befor',props.videoId);
-			
 			testVideo()
 			haveVideo()
-			console.log('has src', state.hasVideoSrc);
 			
 		})
 
 		onMounted(() =>{
 			initVideoState()
 			videoListener()
+			console.log("videoState",videoState);
+			
 		})
 
 		function initVideoState(){
@@ -60,7 +59,6 @@ export default defineComponent({
 			videoState.volume = domVideo?.volume
 			video = domVideo
 			
-			console.log(btnIcon);
 		}
 
 		function videoListener(){
@@ -107,7 +105,13 @@ export default defineComponent({
 		}
 		
 		function videoClickBtn(){
+			console.log(videoState);
+			
+
+			
 			if ( videoState.playing ){
+				console.log("ss playing");
+				
 				videoState.muted = !videoState.muted
 				video.muted = videoState.muted
 			} else if ( videoState.ended ) {
@@ -117,7 +121,8 @@ export default defineComponent({
 				console.log(video.error);
 				
 			}
-
+		
+			
 			btnIcon.value = svgBtnStatus()			
 		}
 

@@ -8,6 +8,7 @@ import maturity_rating from "../MaturityRating/MaturityRating"
 import { svgVideoIcon, close_black } from "../../utils/svgIcons"
 import { play_svg,videoRate } from "../../utils/svgIcons";
 
+
 export default defineComponent({
 	name: "SuggestedVideo",
 	components:{
@@ -21,9 +22,14 @@ export default defineComponent({
 		haveClose: {
 			type: Boolean,
 			default: false
+		},
+		suggestedData: {
+			type: Object
 		}
 	},
+
 	setup(props, { emit }) {
+		
 		const state = reactive({
 			videoSrc: '',
 			hasVideoSrc:false,
@@ -40,20 +46,25 @@ export default defineComponent({
 
 		let video   = document.getElementById(props.videoId)
 		let btnIcon = ref(svgVideoIcon.svgMute )
+
+		let suggestedData = ref<any>({})
 		
 
 		onBeforeMount(() => {
-			console.log('befor',props.videoId);
-			
 			testVideo()
 			haveVideo()
-			console.log('has src', state.hasVideoSrc);
+			console.log("eeeeuuu",props.suggestedData);
+			
+		suggestedData = props.suggestedData
+			console.log("suggestedData",suggestedData,suggestedData.img_info);
 			
 		})
 
 		onMounted(() =>{
 			initVideoState()
 			videoListener()
+			
+			console.log("suggestedData",suggestedData,suggestedData.img_info);
 		})
 
 		function initVideoState(){
@@ -64,7 +75,6 @@ export default defineComponent({
 			
 			console.log(btnIcon);
 		}
-
 		function videoListener(){
 			video?.addEventListener('playing',function (){
 				videoState.playing = true
@@ -91,7 +101,7 @@ export default defineComponent({
 
 		function testVideo() {
 			setTimeout(() => {
-				state.videoSrc = 'http://rjlnywy6l.hn-bkt.clouddn.com/videos/Phonk-_%E9%9B%85%E4%BF%97%E5%85%B1%E8%B5%8F-%E4%BF%97%E5%85%B1%E8%B5%8F-1080P-.mp4'
+				state.videoSrc = "https://ssl-pubpic.51yund.com/1312376525.mp4"
 					haveVideo()
 			},2000)
 		}
@@ -126,12 +136,15 @@ export default defineComponent({
 		function clickClear() {
 			console.log('clearState');
 			
+			router.push({
+				path: `/browse`
+			})
 			emit('clearState', true)
 		}
 
 		function tabWatch(){
 			console.log('to Watch');
-			let src:string = 'http://rjlnywy6l.hn-bkt.clouddn.com/videos/Phonk-_%E9%9B%85%E4%BF%97%E5%85%B1%E8%B5%8F-%E4%BF%97%E5%85%B1%E8%B5%8F-1080P-.mp4'
+			let src:string = 'https://lookcat213.oss-cn-fuzhou.aliyuncs.com/Phonk-_%E9%9B%85%E4%BF%97%E5%85%B1%E8%B5%8F-%E4%BF%97%E5%85%B1%E8%B5%8F-1080P-.mp4'
 			router.push({
 				path: `/watch`,
 				query: {
@@ -146,9 +159,9 @@ export default defineComponent({
 				<div class={ "sug-wrapper" }>
 					<div class={ "sug-billboard" }>
 						<ElImage v-show={  !state.hasVideoSrc } class={ "sug-screen sug-static-image" } 
-						src="https://occ-0-3188-3187.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABaw5X613QY--I6dGT-PAneHdXsMXoafr3idCWCAN8BhK_bavNXtKBOJcJwDCB3Z9DmYh5C7dX26BfxQV1v31TLngQjsrrbKmuzwH.webp?r=6f4" 
+						src={ suggestedData.img_info }
 							fit="cover" />			
-						<div v-show={ state.hasVideoSrc} class={ "sug-screen" }> { videoPlay(props?.videoId,state.videoSrc,"video") } </div> <div class={ "sug-left-vignette" }></div>
+						<div v-show={ state.hasVideoSrc} class={ "sug-screen" }> { videoPlay(props?.videoId,suggestedData.sug_video,"video") } </div> <div class={ "sug-left-vignette" }></div>
 						<div class={ "sug-bottom-vignette" }></div>
 						{
 							props.haveClose ?
@@ -171,10 +184,10 @@ export default defineComponent({
 				</div>
 				<div style={ "opacity: 1" }>
 					<div class={ "sug-img-title" }>
-						<ElImage class={ "sug-img-title-logo" } src="https://occ-0-4295-325.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABQsmLCxDoxsCXZTeom0U3LvYZsPcrZ4Ut93E7eSPnPJBtDsFta-_PV4O8COaZj1I4Tf9RhRFbXwTdPxKXXQsu5s4xkIMuDhw3g3KqF3WWnQ.webp?r=b9b" style="width: 100%; opacity: 1;"></ElImage>
+						<ElImage class={ "sug-img-title-logo" } src={ suggestedData.logo_intro } style="width: 70%; opacity: 1;"></ElImage>
 
 						<div class={ "sug-img-logo-btn" }>
-							<a class={ "sug-img-logo-btn-play" } tabindex="0" href="#">
+							<a  class={ "sug-img-logo-btn-play" } tabindex="0" href="#">
 								<button class={ "sug-img-logo-btn-play-btn" } tabindex="-1">
 									<div class={  "sug-img-logo-btn-play-btn-svg" } >
 										{ play_svg }
@@ -184,7 +197,9 @@ export default defineComponent({
 									</div>
 									
 								</button>
+
 							</a>
+							<a></a>
 							<round_btn class={ "sug-img-logo-btn-play-btn-margin" } svgIcon={ videoRate.love }></round_btn>
 							<round_btn  class={ "sug-img-logo-btn-play-btn-margin" } svgIcon={ videoRate.like }></round_btn>
 						</div>
